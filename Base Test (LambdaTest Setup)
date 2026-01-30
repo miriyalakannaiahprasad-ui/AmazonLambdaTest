@@ -38,7 +38,7 @@ public class BaseTest {
                 caps
         );
 
-        driver.get("https://www.amazon.com");
+        driver.get("https://ecommerce-playground.lambdatest.io/");
     }
 
     @AfterMethod
