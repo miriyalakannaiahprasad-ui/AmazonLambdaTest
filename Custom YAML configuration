@@ -1,0 +1,16 @@
+version: 1
+jobs:
+  - name: Amazon iPhone Selenium Test
+    type: selenium
+    language: java
+    test_framework: testng
+    # Path to your testng.xml in the repo (create one if you don't have)
+    testng_file: src/test/resources/testng.xml
+    os: Windows 10
+    browser: Chrome
+    browser_version: latest
+    resolution: 1920x1080
+    parallels: 2
+    tags:
+      - iPhone
+      - Selenium
