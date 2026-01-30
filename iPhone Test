@@ -8,20 +8,12 @@ import org.testng.annotations.Test;
 public class AmazonIphoneTest extends BaseTest {
 
     @Test
-    public void addIphoneToCart() {
+    public void addIphoneToCart() {    
 
-        // Search for iPhone
-        driver.findElement(By.id("search")).sendKeys("iPhone");
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+By.id("twotabsearchtextbox")
+By.cssSelector("div[data-component-type='s-search-result'] h2 a")
+By.cssSelector("span.a-price-whole")
+By.id("add-to-cart-button")
 
-        // Click first product
-        driver.findElement(By.cssSelector(".product-title a")).click();
-
-        // Get price
-        WebElement price = driver.findElement(By.cssSelector(".product-price .price"));
-        System.out.println("iPhone Price: " + price.getText());
-
-        // Add to cart
-        driver.findElement(By.cssSelector(".btn-cart")).click();
     }
 }
