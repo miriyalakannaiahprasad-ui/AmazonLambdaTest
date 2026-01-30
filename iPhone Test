@@ -1,0 +1,27 @@
+src/test/java/tests/AmazonIphoneTest.java
+package tests;
+
+import base.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class AmazonIphoneTest extends BaseTest {
+
+    @Test
+    public void addIphoneToCart() {
+
+        driver.findElement(By.id("twotabsearchtextbox"))
+              .sendKeys("iPhone");
+
+        driver.findElement(By.id("nav-search-submit-button")).click();
+
+        driver.findElement(By.cssSelector("div[data-component-type='s-search-result'] h2 a"))
+              .click();
+
+        WebElement price = driver.findElement(By.cssSelector("span.a-price-whole"));
+        System.out.println("iPhone Price: $" + price.getText());
+
+        driver.findElement(By.id("add-to-cart-button")).click();
+    }
+}
