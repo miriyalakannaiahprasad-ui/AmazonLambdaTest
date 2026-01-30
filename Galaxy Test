@@ -1,0 +1,27 @@
+src/test/java/tests/AmazonGalaxyTest.java
+package tests;
+
+import base.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class AmazonGalaxyTest extends BaseTest {
+
+    @Test
+    public void addGalaxyToCart() {
+
+        driver.findElement(By.id("twotabsearchtextbox"))
+              .sendKeys("Samsung Galaxy");
+
+        driver.findElement(By.id("nav-search-submit-button")).click();
+
+        driver.findElement(By.cssSelector("div[data-component-type='s-search-result'] h2 a"))
+              .click();
+
+        WebElement price = driver.findElement(By.cssSelector("span.a-price-whole"));
+        System.out.println("Galaxy Price: $" + price.getText());
+
+        driver.findElement(By.id("add-to-cart-button")).click();
+    }
+}
